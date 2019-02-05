@@ -1,0 +1,25 @@
+#N canvas 0 54 1302 712 10;
+#X obj 20 42 inlet~;
+#X obj 92 44 inlet~;
+#X text 28 21 Real;
+#X text 82 21 Imaginary;
+#X text 6 -9 Mag.pd: abstraction that calculates the magnitude of a
+signal in dB;
+#X obj 91 71 *~;
+#X obj 21 69 *~;
+#X obj 51 100 +~;
+#X text 140 87 modulo calculation;
+#X obj 50 159 rmstodb~;
+#X text 136 159 convert to dB;
+#X text 157 129 normalize by 2/4096 (size of the fft window);
+#X obj 49 191 outlet~;
+#X obj 51 127 *~ 4.8828e-05;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 5 0;
+#X connect 1 0 5 1;
+#X connect 5 0 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 13 0;
+#X connect 9 0 12 0;
+#X connect 13 0 9 0;
