@@ -1,0 +1,106 @@
+%
+% $Id: slides.tex 8 2014-02-04 21:01:21Z nicb $
+%
+% Copyright (C) 2007-2009 Nicola Bernardini nicb@sme-ccppd.org
+% 
+% This work is licensed under a Creative Commons License, and specifically the
+% 
+%   Creative Commons Attribution-ShareAlike 2.5 License
+%   http://creativecommons.org/licenses/by-sa/2.5/legalcode
+% 
+% Check http://www.creativecommons.org/ for more information on
+% Creative Commons Licenses and the Creative Commons Project.
+%
+% Set the macros below to whatever is appropriate in a given context
+%
+
+\newcommand{\AnnoAccademico}{2018-2019}
+\newcommand{\argroot}{./sections}
+\newcommand{\beamerslides}{\argroot}
+\newcommand{\imagedir}{\argroot/immagini}
+\newcommand{\exampledir}{\argroot/esempi}
+\newcommand{\templatedir}{./templates/sme-ccppd}
+\newcommand{\datadir}{.}
+\documentclass[\printmode,compress,xcolor=dvipsnames]{beamer}
+\usepackage{ifthen}
+
+\usepackage{beamerthemeSME-CCPPD}
+
+% \ifthenelse{\equal{\printmode}{handout}}%
+% {%
+% 	\usepackage{pgfpages}
+% 	\pgfpagesuselayout{1 on 1}[a4paper,landscape,border shrink=10mm]
+% }{}
+
+\usepackage{colortbl}
+\usepackage[italian]{babel}
+\usepackage{pgf}
+\usepackage{xspace}
+
+\usepackage{multimedia}
+\usepackage{xmpmulti}
+\usepackage{hyperref}
+\usepackage{gitinfo2}
+\usepackage{gensymb}
+\usepackage{hhline}
+
+
+\newcommand{\cpyear}{2019}
+\newcommand{\cpholder}{Nicola Bernardini}
+\newcommand{\cpholderemail}{nicola.bernardini@conservatoriopollini.it}
+
+% Use some nice templates
+
+%\beamertemplateshadingbackground{red!10}{structure!10}
+\beamertemplatetransparentcovereddynamic
+\beamertemplateballitem
+\beamertemplatenumberedballsectiontoc
+
+% My colors
+\definecolor{notdone}{gray}{0.35}
+
+%\usecolortheme[named=MyColor]{structure}
+%\usecolortheme[named=MyColor]{structure}
+\beamertemplateshadingbackground{white!10}{white!10}
+
+\input{macros}
+
+\title[SME Intro \gitAbbrevHash]
+{\small%
+  Introduzione al\\
+  Corso di Musica Elettronica\\
+  del\\
+  Conservatorio ``C.Pollini'' -- Padova\\
+	{\tiny (\rcstag)}
+}
+
+\author{%
+  {\small Nicola Bernardini\\{\tiny con Francesco Morosinotto, Marianna
+  Musacchio, Anna Eliane Barletta, Francesco Ganis}}\\
+	{\tiny \href{mailto:\cpholderemail}{\cpholderemail}}
+}
+% \institute[SME-CCPPD]%
+% {%
+% 	\href{http://www.conservatoriopollini.it}
+% 		 {Conservatorio ``C.Pollini'' -- Padova}
+% }
+\date[Padova \AnnoAccademico]{Conservatorio ``C.Pollini'' Padova - A.A. \AnnoAccademico}
+
+\begin{document}
+\newcounter{ms}
+  
+%%%% START %%%%
+
+\begin{frame}
+	\titlepage
+\end{frame}
+  
+\section{Introduzione}
+\slideinput{introduzione-ENS}
+\slideinput{informatica_musicale}
+\slideinput{im_discipline}
+\slideinput{im_applicazioni}
+\slideinput{risorse-ENS}
+\slideinput{strumenti-ENS}
+
+\end{document}

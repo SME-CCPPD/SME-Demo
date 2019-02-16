@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $Id: run_csound,v 0.0 2004/11/23 00:46:22 nicb Exp $
+#
+THISDIR=$1
+CSOUND_FILE=$THISDIR/osc.csd
+RXVT="xfce4-terminal"
+
+$RXVT -e "less $CSOUND_FILE" && \
+	$RXVT -e "csound -do devaudio $CSOUND_FILE"
+
+exit 0

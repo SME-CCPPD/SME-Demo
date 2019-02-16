@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $Id: run_octave,v 0.0 2004/11/23 00:46:22 nicb Exp $
+#
+exec xfce4-terminal -e octave

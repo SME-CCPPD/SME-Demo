@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $Id: run_pd,v 0.0 2004/11/23 00:46:22 nicb Exp $
+#
+pd
+
+exit 0
