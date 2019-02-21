@@ -1,0 +1,11 @@
+*.nav
+*.toc
+*.aux
+*.out
+*.log
+*.snm
+*.pdf
+*.eps
+.DS_Store
+.slidesdate
+.slidesversion
