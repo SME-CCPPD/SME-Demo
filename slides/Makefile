@@ -77,7 +77,7 @@ examples:
 	$(MAKE) -C $(EXAMPLEDIR) -$(MAKEFLAGS)
 
 distclean:
-	$(RM) *~ *.aux *.dvi *.out *.log *.bbl *.blg *.toc *.nav *.snm *.pdf $(DISTFILE) $(METAFILES)
+	$(RM) *~ *.aux *.dvi *.out *.log *.bbl *.blg *.toc *.nav *.snm $(DISTFILE) $(METAFILES) $(TARGET)
 
 clean: distclean
 	$(RM) $(TARGET)
