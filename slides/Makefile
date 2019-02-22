@@ -34,21 +34,22 @@ MAKEFLAGS+=-w
 ZIP=zip -r
 METAFILES=.slidesversion .slidesdate
 DISTFILE=$(DISTNAME_WO_SFX).zip
+PRINTMODE=beamer
 
 all: target
 
 target:	examples images
-	$(MAKE) -$(MAKEFLAGS) PRINTMODE='' PRINTMODES=beamer realtarget
+	$(MAKE) -$(MAKEFLAGS) realtarget
 
 onelecture: examples images
-	$(MAKE) -$(MAKEFLAGS) PRINTMODE='' PRINTMODES=beamer realtarget
+	$(MAKE) -$(MAKEFLAGS) realtarget
 
 alldist: distlectures dist
 
 dist: $(DISTFILE)
 
 $(DISTFILE): $(METAFILES) examples images
-	$(MAKE) -$(MAKEFLAGS) PRINTMODE=handout PRINTMODES=handout realtarget
+	$(MAKE) -$(MAKEFLAGS) PRINTMODE=article realtarget
 	export df=$(DISTNAME_WO_SFX); $(CD) $(TOPDIR); $(ZIP) $${df}.zip $(CURDIRNAME)/$${df}.pdf $(EXAMPLEDIRNAME)/*.[owma]* $(IMAGEDIRNAME)/*.midi
 	$(MV) $(TOPDIR)/$(DISTFILE) .
 
@@ -56,7 +57,7 @@ $(DISTFILE): $(METAFILES) examples images
 distlectures: images
 	for i in $(LECTURES);\
   do\
-		$(MAKE) -$(MAKEFLAGS) PRINTMODE=handout PRINTMODES=handout LECTNOS="-$$i" realtarget;\
+		$(MAKE) -$(MAKEFLAGS) PRINTMODE=article LECTNOS="-$$i" realtarget;\
 	done
 
 realtarget: $(METAFILES)
